@@ -52,6 +52,18 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'tech-green': {
+					DEFAULT: 'hsl(var(--tech-green))',
+					light: 'hsl(var(--tech-green-light))',
+					dark: 'hsl(var(--tech-green-dark))'
+				},
+				'deep-blue': {
+					DEFAULT: 'hsl(var(--deep-blue))',
+					light: 'hsl(var(--deep-blue-light))',
+					dark: 'hsl(var(--deep-blue-dark))'
+				},
+				'circuit-gray': 'hsl(var(--circuit-gray))',
+				'pcb-gold': 'hsl(var(--pcb-gold))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

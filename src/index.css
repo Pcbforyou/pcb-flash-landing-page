@@ -9,32 +9,52 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 214 92% 34%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 214 92% 34%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 214 92% 34%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 145 100% 39%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 214 92% 34%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 214 10% 95%;
+    --muted-foreground: 214 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 145 100% 39%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 15% 85%;
+    --input: 214 15% 90%;
+    --ring: 145 100% 39%;
+
+    /* Custom PCB theme colors */
+    --tech-green: 145 100% 39%;
+    --tech-green-light: 145 100% 50%;
+    --tech-green-dark: 145 100% 30%;
+    --deep-blue: 214 92% 34%;
+    --deep-blue-light: 214 92% 45%;
+    --deep-blue-dark: 214 92% 25%;
+    --circuit-gray: 214 10% 15%;
+    --pcb-gold: 45 100% 60%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--deep-blue)), hsl(var(--tech-green)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(90deg, hsl(var(--tech-green)), hsl(var(--tech-green-light)));
+
+    /* Shadows */
+    --shadow-tech: 0 10px 30px -10px hsl(var(--tech-green) / 0.3);
+    --shadow-deep: 0 20px 40px -10px hsl(var(--deep-blue) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--tech-green) / 0.4);
 
     --radius: 0.5rem;
 

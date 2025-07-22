@@ -1,54 +1,44 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Zap, DollarSign, Award, Clock, Users, Shield } from "lucide-react";
-
 const WhyChooseUs = () => {
-  const reasons = [
-    {
-      icon: Zap,
-      title: "Lightning Fast",
-      description: "2-day delivery guarantee with our streamlined production process",
-      stat: "2 Days",
-      statLabel: "Average Delivery"
-    },
-    {
-      icon: DollarSign,
-      title: "Affordable Pricing",
-      description: "Competitive rates without compromising on quality or service",
-      stat: "30% Less",
-      statLabel: "Than Competitors"
-    },
-    {
-      icon: Award,
-      title: "Premium Quality",
-      description: "ISO certified manufacturing with 99.8% success rate",
-      stat: "99.8%",
-      statLabel: "Quality Rate"
-    },
-    {
-      icon: Clock,
-      title: "24/7 Support",
-      description: "Round-the-clock customer support and project tracking",
-      stat: "24/7",
-      statLabel: "Support Available"
-    },
-    {
-      icon: Users,
-      title: "Expert Team",
-      description: "15+ years of combined experience in PCB design and manufacturing",
-      stat: "15+",
-      statLabel: "Years Experience"
-    },
-    {
-      icon: Shield,
-      title: "Guaranteed Results",
-      description: "100% satisfaction guarantee with free revisions if needed",
-      stat: "100%",
-      statLabel: "Satisfaction"
-    }
-  ];
-
-  return (
-    <section id="why-choose-us" className="py-20 bg-background">
+  const reasons = [{
+    icon: Zap,
+    title: "Lightning Fast",
+    description: "2-day delivery guarantee with our streamlined production process",
+    stat: "2 Days",
+    statLabel: "Average Delivery"
+  }, {
+    icon: DollarSign,
+    title: "Affordable Pricing",
+    description: "Competitive rates without compromising on quality or service",
+    stat: "30% Less",
+    statLabel: "Than Competitors"
+  }, {
+    icon: Award,
+    title: "Premium Quality",
+    description: "ISO certified manufacturing with 99.8% success rate",
+    stat: "99.8%",
+    statLabel: "Quality Rate"
+  }, {
+    icon: Clock,
+    title: "24/7 Support",
+    description: "Round-the-clock customer support and project tracking",
+    stat: "24/7",
+    statLabel: "Support Available"
+  }, {
+    icon: Users,
+    title: "Expert Team",
+    description: "15+ years of combined experience in PCB design and manufacturing",
+    stat: "15+",
+    statLabel: "Years Experience"
+  }, {
+    icon: Shield,
+    title: "Guaranteed Results",
+    description: "100% satisfaction guarantee with free revisions if needed",
+    stat: "100%",
+    statLabel: "Satisfaction"
+  }];
+  return <section id="why-choose-us" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -61,11 +51,7 @@ const WhyChooseUs = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {reasons.map((reason, index) => (
-            <Card 
-              key={index} 
-              className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-background via-muted/20 to-primary/5 hover:scale-105"
-            >
+          {reasons.map((reason, index) => <Card key={index} className="group hover:shadow-2xl transition-all duration-300 border-0 bg-gradient-to-br from-background via-muted/20 to-primary/5 hover:scale-105">
               <CardContent className="p-8 text-center">
                 <div className="inline-flex p-4 rounded-full bg-primary/10 mb-6 group-hover:bg-primary/20 transition-colors">
                   <reason.icon className="w-8 h-8 text-primary" />
@@ -81,8 +67,7 @@ const WhyChooseUs = () => {
                   <div className="text-sm text-muted-foreground font-medium">{reason.statLabel}</div>
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Trust Section */}
@@ -93,11 +78,11 @@ const WhyChooseUs = () => {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">5000+</div>
+                <div className="text-2xl font-bold text-primary">500+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">500+</div>
+                <div className="text-2xl font-bold text-primary">300+</div>
                 <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
               <div className="text-center">
@@ -112,8 +97,6 @@ const WhyChooseUs = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyChooseUs;

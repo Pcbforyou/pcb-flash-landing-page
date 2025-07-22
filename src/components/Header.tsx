@@ -9,8 +9,12 @@ const Header = () => {
     <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-deep-blue">
-            PCB FOR YOU
+          <div className="flex items-center">
+            <img 
+              src="/lovable-uploads/0073e0e9-b9b7-4a3d-9150-13c6eb0d61b1.png" 
+              alt="PCB FOR YOU Logo" 
+              className="h-8 md:h-10"
+            />
           </div>
           
           {/* Desktop Navigation */}

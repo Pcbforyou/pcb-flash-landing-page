@@ -59,7 +59,7 @@ const Hero = () => {
             <div className="flex items-center justify-center bg-white/10 backdrop-blur-sm rounded-lg p-6">
               <Zap className="w-8 h-8 text-tech-green mr-3" />
               <div className="text-left">
-                <div className="text-2xl font-bold">5000+</div>
+                <div className="text-2xl font-bold">500+</div>
                 <div className="text-sm text-gray-300">Projects Done</div>
               </div>
             </div>

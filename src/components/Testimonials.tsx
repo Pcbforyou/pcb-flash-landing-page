@@ -4,41 +4,41 @@ import { Star, Quote } from "lucide-react";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Rajesh Kumar",
-      company: "TechInnovate Solutions",
-      role: "CTO",
+      name: "Suriya",
+      company: "Mechimed technologies Pvt Ltd",
+      role: "COO",
       rating: 5,
-      text: "PCB FOR YOU delivered our PCB design in just 1.5 days! The quality was exceptional and their team was incredibly responsive throughout the process.",
-      avatar: "RK"
+      text: "PCB FOR YOU delivered our PCB design in just 2 days! The quality was exceptional and their team was incredibly responsive throughout the process.",
+      avatar: "SU"
     },
     {
-      name: "Priya Sharma",
-      company: "ElectroMax Industries",
-      role: "Design Engineer",
-      rating: 5,
-      text: "Outstanding service! They helped optimize our design for manufacturability and saved us both time and money. Highly recommend for any PCB needs.",
-      avatar: "PS"
-    },
-    {
-      name: "Michael Chen",
-      company: "StartupTech",
+      name: "Karthikesh",
+      company: "KKR Robotics Pvt Ltd",
       role: "Founder",
       rating: 5,
-      text: "As a startup, we needed fast and affordable PCB solutions. PCB FOR YOU exceeded our expectations with their speed and quality. Game changer!",
-      avatar: "MC"
+      text: "Outstanding service! They helped optimize our design for manufacturability and saved us both time and money. Highly recommend for any PCB needs.",
+      avatar: "KA"
     },
     {
-      name: "Anita Patel",
-      company: "AutoSense Corp",
-      role: "Product Manager",
+      name: "Santhosh",
+      company: "Spinacle Technologies Pvt Ltd",
+      role: "CEO",
+      rating: 5,
+      text: "As a growing tech company, we needed fast and reliable PCB solutions. PCB FOR YOU exceeded our expectations with their speed and quality. Game changer!",
+      avatar: "SA"
+    },
+    {
+      name: "Sanjay",
+      company: "Agri CMSD",
+      role: "Founder",
       rating: 5,
       text: "Their design services are top-notch. From layout to optimization, everything was perfect. The 2-day design turnaround helped us meet our critical deadlines.",
-      avatar: "AP"
+      avatar: "SJ"
     }
   ];
 
   const partners = [
-    "TechInnovate", "ElectroMax", "StartupTech", "AutoSense", "InnovateCorp", "TechFlow"
+    "Mechimed Technologies", "KKR Robotics", "Nsquare Bros", "Spinacle Technologies", "Agri CMSD"
   ];
 
   return (

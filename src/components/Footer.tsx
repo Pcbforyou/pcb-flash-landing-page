@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Facebook, Twitter, Linkedin, Youtube } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-circuit-gray text-white">
+  return <footer className="bg-circuit-gray text-white">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -62,21 +60,21 @@ const Footer = () => {
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-tech-green mr-3" />
                 <div>
-                  <p className="text-white font-medium">+91 9876543210</p>
+                  <p className="text-white font-medium">+91 9025487664</p>
                   <p className="text-gray-300 text-sm">24/7 Support</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-tech-green mr-3" />
                 <div>
-                  <p className="text-white font-medium">info@pcbforyou.com</p>
+                  <p className="text-white font-medium">admin@pcbforyou.net</p>
                   <p className="text-gray-300 text-sm">Response in 2 hours</p>
                 </div>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 text-tech-green mr-3" />
                 <div>
-                  <p className="text-white font-medium">Mumbai, Maharashtra</p>
+                  <p className="text-white font-medium">Chennai, Tamilnadu</p>
                   <p className="text-gray-300 text-sm">India</p>
                 </div>
               </div>
@@ -110,15 +108,13 @@ const Footer = () => {
         <svg className="w-full h-full" viewBox="0 0 1200 100">
           <defs>
             <pattern id="circuit" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M0,20 L40,20 M20,0 L20,40" stroke="currentColor" strokeWidth="1" className="text-tech-green"/>
-              <circle cx="20" cy="20" r="2" fill="currentColor" className="text-tech-green"/>
+              <path d="M0,20 L40,20 M20,0 L20,40" stroke="currentColor" strokeWidth="1" className="text-tech-green" />
+              <circle cx="20" cy="20" r="2" fill="currentColor" className="text-tech-green" />
             </pattern>
           </defs>
-          <rect width="100%" height="100%" fill="url(#circuit)"/>
+          <rect width="100%" height="100%" fill="url(#circuit)" />
         </svg>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

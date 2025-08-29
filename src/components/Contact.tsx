@@ -3,10 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, MessageCircle, Send, Clock } from "lucide-react";
-
 const Contact = () => {
-  return (
-    <section id="contact" className="py-20 bg-muted/30">
+  return <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -62,7 +60,7 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground font-medium mb-2">info@pcbforyou.com</p>
+                <p className="text-foreground font-medium mb-2">admin@pcbforyou.net</p>
                 <p className="text-muted-foreground mb-4">Response within 2 hours</p>
               </CardContent>
             </Card>
@@ -75,7 +73,7 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-foreground font-medium mb-2">Mumbai, Maharashtra</p>
+                <p className="text-foreground font-medium mb-2">Chennai, Tamilnadu</p>
                 <p className="text-muted-foreground">India</p>
               </CardContent>
             </Card>
@@ -129,10 +127,7 @@ const Contact = () => {
 
                 <div>
                   <label className="text-sm font-medium text-foreground mb-2 block">Project Details</label>
-                  <Textarea 
-                    placeholder="Please describe your PCB requirements, specifications, quantity, timeline, and any special requirements..."
-                    className="min-h-[120px] border-border focus:border-primary resize-none"
-                  />
+                  <Textarea placeholder="Please describe your PCB requirements, specifications, quantity, timeline, and any special requirements..." className="min-h-[120px] border-border focus:border-primary resize-none" />
                 </div>
 
                 <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">
@@ -170,26 +165,16 @@ const Contact = () => {
               Our automated system will analyze your files and provide pricing immediately.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
-              >
+              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold">
                 Upload Gerber Files
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary px-8 py-6 text-lg font-semibold"
-              >
+              <Button size="lg" variant="outline" className="border-white hover:bg-white px-8 py-6 text-lg font-semibold text-gray-700">
                 Schedule Call
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;

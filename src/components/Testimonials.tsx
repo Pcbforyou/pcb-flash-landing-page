@@ -38,7 +38,7 @@ const Testimonials = () => {
   ];
 
   const partners = [
-    "Mechimed Technologies", "KKR Robotics", "Nsquare Bros", "Spinacle Technologies", "Agri CMSD"
+    "Mechimed Technologies", "KKR Robotics", "Nsquare Bros", "Spinacle Technologies", "Agri CMSD", "Quazr Motors"
   ];
 
   return (

@@ -4,9 +4,9 @@ const WhyChooseUs = () => {
   const reasons = [{
     icon: Zap,
     title: "Lightning Fast",
-    description: "2-day delivery guarantee with our streamlined production process",
+    description: "2-day design delivery guarantee with our streamlined design process",
     stat: "2 Days",
-    statLabel: "Average Delivery"
+    statLabel: "Design Delivery"
   }, {
     icon: DollarSign,
     title: "Affordable Pricing",
@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
   }, {
     icon: Award,
     title: "Premium Quality",
-    description: "ISO certified manufacturing with 99.8% success rate",
+    description: "Premium manufacturing standards with 99.8% success rate",
     stat: "99.8%",
     statLabel: "Quality Rate"
   }, {
@@ -91,7 +91,7 @@ const WhyChooseUs = () => {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">2 Days</div>
-                <div className="text-sm text-muted-foreground">Average Delivery</div>
+                <div className="text-sm text-muted-foreground">Design Delivery</div>
               </div>
             </div>
           </div>

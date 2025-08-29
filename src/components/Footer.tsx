@@ -90,7 +90,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center space-x-6">
               <div className="text-sm text-gray-300">
-                <span className="text-tech-green font-medium">2 Days</span> Delivery Guarantee
+                <span className="text-tech-green font-medium">2 Days</span> Design Guarantee
               </div>
               <div className="text-sm text-gray-300">
                 <span className="text-tech-green font-medium">24/7</span> Support

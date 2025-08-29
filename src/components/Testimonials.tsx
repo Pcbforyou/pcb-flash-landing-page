@@ -8,7 +8,7 @@ const Testimonials = () => {
       company: "TechInnovate Solutions",
       role: "CTO",
       rating: 5,
-      text: "PCB FOR YOU delivered our prototype boards in just 1.5 days! The quality was exceptional and their team was incredibly responsive throughout the process.",
+      text: "PCB FOR YOU delivered our PCB design in just 1.5 days! The quality was exceptional and their team was incredibly responsive throughout the process.",
       avatar: "RK"
     },
     {
@@ -32,7 +32,7 @@ const Testimonials = () => {
       company: "AutoSense Corp",
       role: "Product Manager",
       rating: 5,
-      text: "Their assembly services are top-notch. From SMT to through-hole, everything was perfect. The 2-day turnaround helped us meet our critical deadlines.",
+      text: "Their design services are top-notch. From layout to optimization, everything was perfect. The 2-day design turnaround helped us meet our critical deadlines.",
       avatar: "AP"
     }
   ];

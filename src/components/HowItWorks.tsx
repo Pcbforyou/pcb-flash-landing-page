@@ -18,7 +18,7 @@ const HowItWorks = () => {
     icon: Truck,
     step: "03",
     title: "Fast Delivery",
-    description: "Your high-quality PCBs are manufactured and delivered to your doorstep within 2 days.",
+    description: "Your high-quality PCB designs are completed and delivered within 2 days.",
     details: ["Express manufacturing", "Quality packaging", "Real-time tracking", "Secure delivery"]
   }];
   return <section id="how-it-works" className="py-20 bg-muted/30">

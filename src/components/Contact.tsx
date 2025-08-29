@@ -29,7 +29,7 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold text-foreground mb-2">+91 9876543210</p>
+                <p className="text-2xl font-bold text-foreground mb-2">+91 902548766</p>
                 <p className="text-muted-foreground mb-4">Available 24/7 for urgent projects</p>
                 <Button className="w-full bg-primary hover:bg-tech-green-dark">
                   <Phone className="w-4 h-4 mr-2" />

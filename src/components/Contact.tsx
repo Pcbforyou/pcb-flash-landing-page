@@ -29,9 +29,11 @@ const Contact = () => {
               <CardContent>
                 <p className="text-2xl font-bold text-foreground mb-2">+91 9025487664</p>
                 <p className="text-muted-foreground mb-4">Available 24/7 for urgent projects</p>
-                <Button className="w-full bg-primary hover:bg-tech-green-dark">
-                  <Phone className="w-4 h-4 mr-2" />
-                  Call Now
+                <Button className="w-full bg-primary hover:bg-tech-green-dark" asChild>
+                  <a href="tel:+919025487664">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Now
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -45,9 +47,11 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground mb-4">Quick support via WhatsApp</p>
-                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Chat on WhatsApp
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
+                  <a href="https://wa.me/919025487664" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Chat on WhatsApp
+                  </a>
                 </Button>
               </CardContent>
             </Card>

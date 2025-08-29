@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
         <div className="bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-8 md:p-12">
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              Trusted by <span className="text-primary">5000+</span> Companies Worldwide
+              Trusted by <span className="text-primary">300+</span> Companies Worldwide
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
               <div className="text-center">

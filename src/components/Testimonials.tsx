@@ -123,11 +123,11 @@ const Testimonials = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12 pt-8 border-t border-border">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">5000+</div>
+              <div className="text-3xl font-bold text-primary">500+</div>
               <div className="text-sm text-muted-foreground">Projects Delivered</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary">500+</div>
+              <div className="text-3xl font-bold text-primary">300+</div>
               <div className="text-sm text-muted-foreground">Happy Clients</div>
             </div>
             <div className="text-center">

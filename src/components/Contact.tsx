@@ -3,8 +3,52 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, MessageCircle, Send, Clock } from "lucide-react";
+import { useRef, useState, type ChangeEvent } from "react";
+import { toast } from "@/components/ui/use-toast";
+
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyCk92KJhrGMnDrYm7uMMaJdtomhE_trX5UMVjJck6_bseOWpYE-Hw-pT4-w61nW7y6KQ/exec";
+
 const Contact = () => {
-  return <section id="contact" className="py-20 bg-muted/30">
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [uploading, setUploading] = useState(false);
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFilesSelected = async (e: ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    setUploading(true);
+    try {
+      for (const file of Array.from(files)) {
+        const formData = new FormData();
+        formData.append("file", file, file.name);
+        formData.append("source", "website-contact");
+        const res = await fetch(APPS_SCRIPT_URL, { method: "POST", body: formData });
+        if (!res.ok) throw new Error(`Upload failed: ${res.status}`);
+        try {
+          await res.clone().json();
+        } catch {}
+        toast({
+          title: "Uploaded successfully",
+          description: `${file.name} sent to our engineers.`,
+        });
+      }
+    } catch (err: any) {
+      toast({
+        title: "Upload failed",
+        description: err?.message ?? "Please try again or email us.",
+        variant: "destructive",
+      });
+    } finally {
+      setUploading(false);
+      e.target.value = "";
+    }
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -169,16 +213,30 @@ const Contact = () => {
               Our automated system will analyze your files and provide pricing immediately.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold">
-                Upload Gerber Files
+              <input
+                ref={fileInputRef}
+                type="file"
+                multiple
+                accept=".zip,.rar,.7z,.ger,.gbr,.drl,.brd,.pcb,.kicad_pcb,.kicad_mod"
+                className="hidden"
+                onChange={handleFilesSelected}
+              />
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
+                onClick={handleUploadClick}
+                disabled={uploading}
+              >
+                {uploading ? "Uploading..." : "Upload Gerber Files"}
               </Button>
               <Button size="lg" variant="outline" className="border-white hover:bg-white px-8 py-6 text-lg font-semibold text-gray-700">
                 Schedule Call
               </Button>
             </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>;
+    </section>);
 };
 export default Contact;

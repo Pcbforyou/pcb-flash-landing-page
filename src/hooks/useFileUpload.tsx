@@ -1,7 +1,7 @@
 import React, { useRef, useState, type ChangeEvent } from "react";
 import { toast } from "@/hooks/use-toast";
 
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyCk92KJhrGMnDrYm7uMMaJdtomhE_trX5UMVjJck6_bseOWpYE-Hw-pT4-w61nW7y6KQ/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxcn1fStIib9Uty_wwC0sV1X1K1cZFpTdfbNPZ_XSi4N_mf8z8-91rz_9_hxRmmhhOo4A/exec";
 
 export const useFileUpload = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);

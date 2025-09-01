@@ -3,49 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, MessageCircle, Send, Clock } from "lucide-react";
-import { useRef, useState, type ChangeEvent } from "react";
-import { toast } from "@/components/ui/use-toast";
-
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyCk92KJhrGMnDrYm7uMMaJdtomhE_trX5UMVjJck6_bseOWpYE-Hw-pT4-w61nW7y6KQ/exec";
+import { useFileUpload } from "@/hooks/useFileUpload";
 
 const Contact = () => {
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [uploading, setUploading] = useState(false);
-
-  const handleUploadClick = () => {
-    fileInputRef.current?.click();
-  };
-
-  const handleFilesSelected = async (e: ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (!files || files.length === 0) return;
-    setUploading(true);
-    try {
-      for (const file of Array.from(files)) {
-        const formData = new FormData();
-        formData.append("file", file, file.name);
-        formData.append("source", "website-contact");
-        const res = await fetch(APPS_SCRIPT_URL, { method: "POST", body: formData });
-        if (!res.ok) throw new Error(`Upload failed: ${res.status}`);
-        try {
-          await res.clone().json();
-        } catch {}
-        toast({
-          title: "Uploaded successfully",
-          description: `${file.name} sent to our engineers.`,
-        });
-      }
-    } catch (err: any) {
-      toast({
-        title: "Upload failed",
-        description: err?.message ?? "Please try again or email us.",
-        variant: "destructive",
-      });
-    } finally {
-      setUploading(false);
-      e.target.value = "";
-    }
-  };
+  const { FileInput, handleUploadClick, uploading } = useFileUpload();
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
@@ -213,14 +174,7 @@ const Contact = () => {
               Our automated system will analyze your files and provide pricing immediately.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <input
-                ref={fileInputRef}
-                type="file"
-                multiple
-                accept=".zip,.rar,.7z,.ger,.gbr,.drl,.brd,.pcb,.kicad_pcb,.kicad_mod"
-                className="hidden"
-                onChange={handleFilesSelected}
-              />
+              <FileInput />
               <Button
                 size="lg"
                 variant="secondary"

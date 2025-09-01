@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Zap, Shield, Clock } from "lucide-react";
 import heroPcb from "@/assets/hero-pcb.jpg";
+import { useFileUpload } from "@/hooks/useFileUpload";
+
 const Hero = () => {
+  const { FileInput, handleUploadClick, uploading } = useFileUpload();
+
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
@@ -30,13 +34,25 @@ const Hero = () => {
 
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">India's fastest PCB designing company. From concept to design – we make it happen with lightning speed and uncompromising quality.</p>
 
+          <FileInput />
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" className="bg-tech-green hover:bg-tech-green-dark text-white px-8 py-6 text-lg font-semibold group">
-              Submit Gerber Files
+            <Button 
+              size="lg" 
+              className="bg-tech-green hover:bg-tech-green-dark text-white px-8 py-6 text-lg font-semibold group"
+              onClick={handleUploadClick}
+              disabled={uploading}
+            >
+              {uploading ? "Uploading..." : "Submit Gerber Files"}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="lg" className="border-white hover:bg-white hover:text-deep-blue px-8 py-6 text-lg font-semibold text-[#064cff]">
-              Get Free Quote
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-white hover:bg-white hover:text-deep-blue px-8 py-6 text-lg font-semibold text-[#064cff]"
+              onClick={handleUploadClick}
+              disabled={uploading}
+            >
+              {uploading ? "Uploading..." : "Get Free Quote"}
             </Button>
           </div>
 

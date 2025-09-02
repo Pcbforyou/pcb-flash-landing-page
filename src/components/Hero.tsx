@@ -4,7 +4,7 @@ import heroPcb from "@/assets/hero-pcb.jpg";
 import { useFileUpload } from "@/hooks/useFileUpload";
 
 const Hero = () => {
-  const { FileInput, handleUploadClick, uploading } = useFileUpload();
+  const { FileInput, LoginDialog, handleUploadClick, uploading } = useFileUpload();
 
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -35,6 +35,7 @@ const Hero = () => {
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">India's fastest PCB designing company. From concept to design – we make it happen with lightning speed and uncompromising quality.</p>
 
           <FileInput />
+          <LoginDialog />
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button 
               size="lg" 

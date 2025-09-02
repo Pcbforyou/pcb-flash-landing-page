@@ -4,7 +4,7 @@ import { Upload, Cog, Truck, ArrowRight } from "lucide-react";
 import { useFileUpload } from "@/hooks/useFileUpload";
 
 const HowItWorks = () => {
-  const { FileInput, handleUploadClick, uploading } = useFileUpload();
+  const { FileInput, LoginDialog, handleUploadClick, uploading } = useFileUpload();
   const steps = [{
     icon: Upload,
     step: "01",
@@ -90,6 +90,7 @@ const HowItWorks = () => {
                 Upload your files now and get your quote instantly!
               </p>
               <FileInput />
+              <LoginDialog />
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   size="lg" 

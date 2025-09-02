@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, MessageCircle, Send, Clock } from "lucide-react";
 import { useFileUpload } from "@/hooks/useFileUpload";
 
 const Contact = () => {
-  const { FileInput, handleUploadClick, uploading } = useFileUpload();
+  const { FileInput, LoginDialog, handleUploadClick, uploading } = useFileUpload();
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
@@ -175,6 +175,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <FileInput />
+              <LoginDialog />
               <Button
                 size="lg"
                 variant="secondary"

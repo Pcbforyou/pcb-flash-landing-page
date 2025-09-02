@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, MessageCircle, Send, Clock } from "lucide-react";
 import { useFileUpload } from "@/hooks/useFileUpload";
 
 const Contact = () => {
-  const { FileInput, LoginDialog, LoginButton, handleUploadClick, uploading, isAuthenticated } = useFileUpload();
+  const { FileInput, handleUploadClick, uploading } = useFileUpload();
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
@@ -175,25 +175,18 @@ const Contact = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <FileInput />
-              <LoginDialog />
-              {isAuthenticated ? (
-                <>
-                  <Button
-                    size="lg"
-                    variant="secondary"
-                    className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
-                    onClick={handleUploadClick}
-                    disabled={uploading}
-                  >
-                    {uploading ? "Uploading..." : "Upload Gerber Files"}
-                  </Button>
-                  <Button size="lg" variant="outline" className="border-white hover:bg-white px-8 py-6 text-lg font-semibold text-gray-700">
-                    Schedule Call
-                  </Button>
-                </>
-              ) : (
-                <LoginButton variant="secondary" />
-              )}
+              <Button
+                size="lg"
+                variant="secondary"
+                className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
+                onClick={handleUploadClick}
+                disabled={uploading}
+              >
+                {uploading ? "Uploading..." : "Upload Gerber Files"}
+              </Button>
+              <Button size="lg" variant="outline" className="border-white hover:bg-white px-8 py-6 text-lg font-semibold text-gray-700">
+                Schedule Call
+              </Button>
             </div>
             </div>
           </div>

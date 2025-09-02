@@ -4,7 +4,7 @@ import { Upload, Cog, Truck, ArrowRight } from "lucide-react";
 import { useFileUpload } from "@/hooks/useFileUpload";
 
 const HowItWorks = () => {
-  const { FileInput, LoginDialog, handleUploadClick, uploading } = useFileUpload();
+  const { FileInput, LoginDialog, LoginButton, handleUploadClick, uploading, isAuthenticated } = useFileUpload();
   const steps = [{
     icon: Upload,
     step: "01",
@@ -92,25 +92,31 @@ const HowItWorks = () => {
               <FileInput />
               <LoginDialog />
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  size="lg" 
-                  variant="secondary" 
-                  className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
-                  onClick={handleUploadClick}
-                  disabled={uploading}
-                >
-                  {uploading ? "Uploading..." : "Upload Gerber Files"}
-                  <Upload className="ml-2 w-5 h-5" />
-                </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-white hover:bg-white px-8 py-6 text-lg font-semibold text-[#0372f9]"
-                  onClick={handleUploadClick}
-                  disabled={uploading}
-                >
-                  {uploading ? "Uploading..." : "Get Free Quote"}
-                </Button>
+                {isAuthenticated ? (
+                  <>
+                    <Button 
+                      size="lg" 
+                      variant="secondary" 
+                      className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
+                      onClick={handleUploadClick}
+                      disabled={uploading}
+                    >
+                      {uploading ? "Uploading..." : "Upload Gerber Files"}
+                      <Upload className="ml-2 w-5 h-5" />
+                    </Button>
+                    <Button 
+                      size="lg" 
+                      variant="outline" 
+                      className="border-white hover:bg-white px-8 py-6 text-lg font-semibold text-[#0372f9]"
+                      onClick={handleUploadClick}
+                      disabled={uploading}
+                    >
+                      {uploading ? "Uploading..." : "Get Free Quote"}
+                    </Button>
+                  </>
+                ) : (
+                  <LoginButton variant="secondary" />
+                )}
               </div>
             </div>
           </div>

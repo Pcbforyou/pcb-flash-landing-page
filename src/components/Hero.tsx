@@ -4,7 +4,7 @@ import heroPcb from "@/assets/hero-pcb.jpg";
 import { useFileUpload } from "@/hooks/useFileUpload";
 
 const Hero = () => {
-  const { FileInput, LoginDialog, handleUploadClick, uploading } = useFileUpload();
+  const { FileInput, LoginDialog, LoginButton, handleUploadClick, uploading, isAuthenticated } = useFileUpload();
 
   return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -37,24 +37,30 @@ const Hero = () => {
           <FileInput />
           <LoginDialog />
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-              size="lg" 
-              className="bg-tech-green hover:bg-tech-green-dark text-white px-8 py-6 text-lg font-semibold group"
-              onClick={handleUploadClick}
-              disabled={uploading}
-            >
-              {uploading ? "Uploading..." : "Submit Gerber Files"}
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="border-white hover:bg-white hover:text-deep-blue px-8 py-6 text-lg font-semibold text-[#064cff]"
-              onClick={handleUploadClick}
-              disabled={uploading}
-            >
-              {uploading ? "Uploading..." : "Get Free Quote"}
-            </Button>
+            {isAuthenticated ? (
+              <>
+                <Button 
+                  size="lg" 
+                  className="bg-tech-green hover:bg-tech-green-dark text-white px-8 py-6 text-lg font-semibold group"
+                  onClick={handleUploadClick}
+                  disabled={uploading}
+                >
+                  {uploading ? "Uploading..." : "Submit Gerber Files"}
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-white hover:bg-white hover:text-deep-blue px-8 py-6 text-lg font-semibold text-[#064cff]"
+                  onClick={handleUploadClick}
+                  disabled={uploading}
+                >
+                  {uploading ? "Uploading..." : "Get Free Quote"}
+                </Button>
+              </>
+            ) : (
+              <LoginButton variant="default" />
+            )}
           </div>
 
           {/* Trust Indicators */}

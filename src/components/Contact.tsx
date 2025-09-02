@@ -6,7 +6,7 @@ import { Phone, Mail, MapPin, MessageCircle, Send, Clock } from "lucide-react";
 import { useFileUpload } from "@/hooks/useFileUpload";
 
 const Contact = () => {
-  const { FileInput, LoginDialog, handleUploadClick, uploading } = useFileUpload();
+  const { FileInput, LoginDialog, LoginButton, handleUploadClick, uploading, isAuthenticated } = useFileUpload();
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
@@ -176,18 +176,24 @@ const Contact = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <FileInput />
               <LoginDialog />
-              <Button
-                size="lg"
-                variant="secondary"
-                className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
-                onClick={handleUploadClick}
-                disabled={uploading}
-              >
-                {uploading ? "Uploading..." : "Upload Gerber Files"}
-              </Button>
-              <Button size="lg" variant="outline" className="border-white hover:bg-white px-8 py-6 text-lg font-semibold text-gray-700">
-                Schedule Call
-              </Button>
+              {isAuthenticated ? (
+                <>
+                  <Button
+                    size="lg"
+                    variant="secondary"
+                    className="bg-white text-primary hover:bg-gray-100 px-8 py-6 text-lg font-semibold"
+                    onClick={handleUploadClick}
+                    disabled={uploading}
+                  >
+                    {uploading ? "Uploading..." : "Upload Gerber Files"}
+                  </Button>
+                  <Button size="lg" variant="outline" className="border-white hover:bg-white px-8 py-6 text-lg font-semibold text-gray-700">
+                    Schedule Call
+                  </Button>
+                </>
+              ) : (
+                <LoginButton variant="secondary" />
+              )}
             </div>
             </div>
           </div>
